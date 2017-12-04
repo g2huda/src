@@ -3,11 +3,10 @@ import {ImageBackground, Text, TouchableHighlight, StyleSheet, TouchableOpacity,
 import {Colours} from './Colours';
 import PropTypes from 'prop-types';
 
-const width = Dimensions.get("screen").height;
 const Cell = ({colour, displayNumbers, onClick}) => (
-  <TouchableOpacity disabled={onClick?false:true} onPress={onClick}>
-  <ImageBackground source={Colours[colour.colour]} style={styles.backGround}   >
-  <Text style={colour.colour === 'black'? {color:'white', fontSize:25}: styles.number}>
+  <TouchableOpacity disabled={onClick?false:true} onPress={onClick} style={{flex:1}}>
+  <ImageBackground source={Colours[colour.colour]} style={styles.backGround} resizeMode='contain'  >
+  <Text adjustsFontSizeToFit style={colour.colour === 'black'? {color:'white', fontWeight: 'bold'}: styles.number}>
     {colour.index>0&&displayNumbers?colour.index:""}
   </Text>
   </ImageBackground> 
@@ -16,13 +15,14 @@ const Cell = ({colour, displayNumbers, onClick}) => (
 
 const styles = StyleSheet.create({
   backGround: {
-    width: width/15,
-    height: width/15,
+    flex: 1, 
+    width:undefined,
+    height:undefined,
     justifyContent: 'center',
     alignItems: 'center',
   },
   number: {
-    fontSize:25,
+    fontWeight: 'bold'
   }
 })
 

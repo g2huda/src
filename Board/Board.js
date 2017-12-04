@@ -36,23 +36,29 @@ const Board = ({ style, gameOver, pegsOnBoard, currentRow, guessResults,
 }
 
 const styles = StyleSheet.create({
+  middle: {
+    flex: 1,
+  },
   button: {
-   alignSelf: "flex-end"
+   alignSelf: "flex-end",
+   flex: 1
   },
   board: {
-      //flex: 1,
+      flex: 1,
       flexDirection: 'row',
-      //justifyContent: 'center'
+      justifyContent: 'flex-start'
       //position: "relative"
   },
   keyPegs: {
+    flex: 0.5,
     borderStyle: 'solid',
     borderColor: 'black',
     borderWidth: 1,
-    width: Dimensions.get("screen").height/18,
-    height: Dimensions.get("screen").height/18,
-    justifyContent: "center",
-    alignSelf: "center"
+    padding:5,
+    //width: Dimensions.get("screen").height/18,
+    //height: Dimensions.get("screen").height/18,
+    justifyContent: "space-around",
+    //alignSelf: "space-around"
     //alignItems: "center",
   }
 })

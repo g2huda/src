@@ -2,9 +2,6 @@ import React from 'react'
 import {View, ImageBackground, StyleSheet, Dimensions} from 'react-native'
 import PropTypes from 'prop-types'
 import {Colours} from './Colours'
-//import './KeyPegHolder.css'
-
-const dim = Dimensions.get("screen").height/40;
 
 const createHolder = (keyPegs, guessResult) => {
     let cols = Math.ceil(keyPegs.length/2);
@@ -23,7 +20,10 @@ const createHolder = (keyPegs, guessResult) => {
     return arr.map((rowVal, rowInd) => (
         <View style={styles.row} key={`keyPeg${rowInd}`}>
          {rowVal.map((colVal, colInd) => (
-            <ImageBackground key={`keyPeg${rowInd}${colInd}`} source={Colours[colVal]} style={{width:dim, height:dim}} />
+             
+            <ImageBackground key={`keyPeg${rowInd}${colInd}`} 
+            source={Colours[colVal]} style={styles.image}  resizeMode='contain' />
+            
           ))}
         </View>
     ));
@@ -33,10 +33,15 @@ const KeyPegHolder = ({keyPegs, guessResult}) => {return createHolder(keyPegs, g
        
 const styles = StyleSheet.create({
     row: {
-        //flex: 1,
+        flex: 1,
         flexDirection: 'row',
-        justifyContent: 'center'
-    }
+        justifyContent: 'center',
+    },
+    image: {
+        flex:1,
+        width:undefined,
+        height:undefined,
+    },
 })
 KeyPegHolder.PropTypes = {
     keyPegs: PropTypes.array,

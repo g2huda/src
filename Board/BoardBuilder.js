@@ -9,7 +9,7 @@ const BoardBuilder = ({shield, board, boardDispatch, pegHolder, pegHolderDispatc
   <View style={styles.container}>  
     <View style={styles.boardContainer}> 
       <Shield {...shield} />
-      <Board style={styles.board} {...board} {...boardDispatch} />
+      <Board {...board} {...boardDispatch} />
     </View>
     <View style={styles.pegHolder}>
       <PegHolder {...pegHolder} {...pegHolderDispatch} />
@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   boardContainer: {
-    flex: 0.9,
+    flex: 6,
     borderStyle: 'solid',
     borderWidth: 1
   },
   pegHolder: {
-    flex: 0.1,
+    flex: 1,
     alignContent: "center",
     justifyContent: "center"
   }
