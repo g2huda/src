@@ -17,7 +17,9 @@ const createHolder = (keyPegs, guessResult) => {
         arr.push(classNames.slice(y, y+cols));
     }
    
-    return arr.map((rowVal, rowInd) => (
+    return ( 
+        <View style={styles.container}>
+        {arr.map((rowVal, rowInd) => (
         <View style={styles.row} key={`keyPeg${rowInd}`}>
          {rowVal.map((colVal, colInd) => (
              
@@ -26,14 +28,26 @@ const createHolder = (keyPegs, guessResult) => {
             
           ))}
         </View>
-    ));
+    ))}
+    </View>
+    )
 }
 
 const KeyPegHolder = ({keyPegs, guessResult}) => {return createHolder(keyPegs, guessResult)};
        
 const styles = StyleSheet.create({
+    container: {
+        flex:0.8,
+        borderStyle: 'solid',
+        borderColor: 'black',
+        borderWidth: 1,
+        padding:2,
+        //justifyContent: "center",
+        //alignContent: "center",
+        //alignItems: 'center'
+    },
     row: {
-        flex: 1,
+        flex: 0.5,
         flexDirection: 'row',
         justifyContent: 'center',
     },

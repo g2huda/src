@@ -50,16 +50,13 @@ const styles = StyleSheet.create({
       //position: "relative"
   },
   keyPegs: {
-    flex: 0.5,
-    borderStyle: 'solid',
-    borderColor: 'black',
-    borderWidth: 1,
-    padding:5,
-    //width: Dimensions.get("screen").height/18,
-    //height: Dimensions.get("screen").height/18,
-    justifyContent: "space-around",
-    //alignSelf: "space-around"
-    //alignItems: "center",
+    flex: 0.7,
+    //borderStyle: 'solid',
+    //borderColor: 'black',
+    //borderWidth: 1,
+    //padding:5,
+    //justifyContent: "space-around",
+    justifyContent: "center"
   }
 })
 

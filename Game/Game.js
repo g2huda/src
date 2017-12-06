@@ -10,6 +10,7 @@ const img = require('../Board/images/woods/wood5.jpg');
 const Game = ({gameOver, loseGame, startGame}) => (
   <View style={styles.game}>
     <ImageBackground source={img} style={{flex:1}}>
+      <View style={styles.statusBarBackground}></View>
       <View style={styles.row}>
         <View style={styles.boardContainer}>
           <BoardContainer />
@@ -23,6 +24,9 @@ const Game = ({gameOver, loseGame, startGame}) => (
   
 );
 const styles = StyleSheet.create({
+  statusBarBackground: {
+    height: (Platform.OS === 'ios') ? 45 : 0,
+  },
   game: {
     flex: 1,
   },

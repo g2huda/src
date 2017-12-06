@@ -5,17 +5,22 @@ import GameSettingsFactory from './GameSettingsFactory'
 
 const GameSettings = ({gameSettings}) => (
   <ScrollView  scrollsToTop={false}  style={styles.menu}>
-        <Text> Game Settings </Text>
+        <Text style={styles.header}> Game Settings </Text>
         {gameSettings.settings.options.map((setting, ind) => 
           GameSettingsFactory.build({...gameSettings, value: setting, key:setting}))}
         <Text>Total wins: {gameSettings.totalWon} </Text>
-        <Text>total Lost: {gameSettings.totalLost}</Text>
+        <Text>Total lost: {gameSettings.totalLost}</Text>
     </ScrollView>
 )
 
 const styles = StyleSheet.create({
   menu: {
     padding: 15,
+  },
+  header: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    padding: 5
   }
 });
 GameSettings.PropTypes = {
