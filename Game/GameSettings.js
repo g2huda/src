@@ -20,7 +20,8 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 20,
     fontWeight: 'bold',
-    padding: 5
+    paddingBottom: 5,
+    paddingTop: 45
   }
 });
 GameSettings.PropTypes = {

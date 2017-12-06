@@ -4,7 +4,7 @@ import {View,Text, CheckBox} from 'react-native'
 import {Switch} from 'react-native-switch'
 
 const ToggleNumbers = ({value, displayNumbers, toggleDisplayNumbers}) => (
-        <View style={{flexDirection:'row', justifyContent: 'space-between'}}>
+        <View style={{flexDirection:'row', justifyContent: 'space-between', padding:6}}>
             <Text>Display Numbers</Text>
             <Switch
             value={false}
@@ -20,11 +20,6 @@ const ToggleNumbers = ({value, displayNumbers, toggleDisplayNumbers}) => (
             circleActiveColor={'#30a566'}
             circleInActiveColor={'#000000'}
             />
-        {/* <CheckBox
-        value={displayNumbers}
-        onValueChange={toggleDisplayNumbers}
-        /> */}
-        
         </View>
 )
 

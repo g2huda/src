@@ -16,7 +16,7 @@ const PegHolder = ({style, values, displayNumbers, onPegClick}) => (
 const styles = StyleSheet.create({
     container: {
         flex: 0.08,
-        backgroundColor: 'grey',
+        //backgroundColor: 'grey',
         borderStyle: "solid",
         borderWidth: 1,
         borderColor: 'black',
