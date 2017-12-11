@@ -1,31 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {View,Text, CheckBox} from 'react-native'
-import {Switch} from 'react-native-switch'
+import {StyleSheet, Image, TouchableOpacity} from 'react-native'
 
-const ToggleNumbers = ({value, displayNumbers, toggleDisplayNumbers}) => (
-        <View style={{flexDirection:'row', justifyContent: 'space-between', padding:6}}>
-            <Text>Display Numbers</Text>
-            <Switch
-            value={false}
-            onValueChange={toggleDisplayNumbers}
-            disabled={false}
-            activeText={'On'}
-            inActiveText={'Off'}
-            circleSize={30}
-            barHeight={15}
-            circleBorderWidth={3}
-            backgroundActive={'green'}
-            backgroundInactive={'gray'}
-            circleActiveColor={'#30a566'}
-            circleInActiveColor={'#000000'}
-            />
-        </View>
+const ToggleNumbers = ({toggleDisplayNumbers, image}) => (
+    <TouchableOpacity style={styles.container} onPress={toggleDisplayNumbers}>
+        <Image source={image} style={styles.image}  resizeMode='contain' />
+    </TouchableOpacity>
 )
+
+const styles = StyleSheet.create({
+    container:{
+        flex: 0.15,
+    },
+    image: {
+        flex:1, 
+        width: undefined,
+        height: undefined
+    }
+})
 
 ToggleNumbers.PropTypes = {
     value: PropTypes.string.isRequired,
-    displayNumbers: PropTypes.bool.isRequired,
-    toggleDisplayNumbers: PropTypes.func.isRequired
+    toggleDisplayNumbers: PropTypes.func.isRequired,
+    image: PropTypes.object.isRequired
 }
 export default ToggleNumbers

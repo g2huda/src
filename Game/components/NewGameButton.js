@@ -1,24 +1,20 @@
 import React from 'react'
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
+import {StyleSheet, Image, TouchableOpacity} from 'react-native'
 
-const NewGameButton = ({startGame}) => (
-    <TouchableOpacity onPress={startGame}>
-        <View style={styles.container}>
-            <Text adjustsFontSizeToFit style={styles.txt}>NEW GAME</Text>
-        </View>
+const NewGameButton = ({startGame, image}) => (
+    <TouchableOpacity style={styles.container} onPress={startGame}>
+        <Image source={image} style={styles.image}  resizeMode='contain' />
     </TouchableOpacity>
 )
 
 const styles = StyleSheet.create({
     container:{
-        //flex: 1,
-        padding: 10,
-        backgroundColor: "grey",
-        justifyContent: "center",
-        alignItems: "center"
+        flex: 0.15,
     },
-    txt:{
-        fontWeight: 'bold'
+    image: {
+        flex:1, 
+        width: undefined,
+        height: undefined
     }
 })
 

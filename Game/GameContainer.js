@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Alert} from 'react-native';
 import SideMenu from 'react-native-side-menu';
 
 import Game from './Game';
@@ -23,10 +24,10 @@ class GameContainer extends Component {
     if(guessResults !== this.props.guessResults){
       if (guessResults[this.props.currentRow-1] && guessResults[this.props.currentRow-1].onSpot === columns){
         this.props.gameSettingsFunctions.winGame();
-        alert("YOU WIN :)");
+        Alert.alert('',"YOU WIN :)");
       } else if(currentRow === 0){
         this.props.gameSettingsFunctions.loseGame();
-        alert("YOU LOST :(");
+        Alert.alert('', "YOU LOST :(");
       }  
     }
   }
@@ -46,20 +47,17 @@ class GameContainer extends Component {
   
 
   render() {
-    const gameSettings={...this.props.gameSettingsFunctions, 
-      //startGame:this.startGame, 
-      settings: this.props.game.gameSettings,
-      totalWon: this.props.game.totalWon,
-      totalLost: this.props.game.totalLost,
-      onMenu: this.props.game.onMenu};
+    const gameStatus={totalWon: this.props.game.totalWon,
+      totalLost: this.props.game.totalLost};
 
     
-    const menu = <GameSettings gameSettings={gameSettings} />;
+    const menu = <GameSettings gameSettings={gameStatus} />;
     
     return(
       <SideMenu menu={menu}>
         <Game gameOver={this.props.game.gameOver} startGame={this.startGame} 
-        loseGame={this.props.gameSettingsFunctions.loseGame}/>
+        loseGame={this.props.gameSettingsFunctions.loseGame}
+        toggleDisplayNumbers={this.props.gameSettingsFunctions.toggleDisplayNumbers} />
       </SideMenu>
     );
   }

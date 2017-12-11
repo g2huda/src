@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {View, Text, ScrollView, StyleSheet}from 'react-native'
-import GameSettingsFactory from './GameSettingsFactory'
+//import GameSettingsFactory from './GameSettingsFactory'
 
 const GameSettings = ({gameSettings}) => (
-  <ScrollView  scrollsToTop={false}  style={styles.menu}>
+  <ScrollView  /*scrollsToTop={false}*/  style={styles.menu}>
         <Text style={styles.header}> Game Settings </Text>
-        {gameSettings.settings.options.map((setting, ind) => 
-          GameSettingsFactory.build({...gameSettings, value: setting, key:setting}))}
+        {/* {gameSettings.settings.options.map((setting, ind) => 
+          GameSettingsFactory.build({...gameSettings, value: setting, key:setting}))} */}
         <Text>Total wins: {gameSettings.totalWon} </Text>
         <Text>Total lost: {gameSettings.totalLost}</Text>
     </ScrollView>
